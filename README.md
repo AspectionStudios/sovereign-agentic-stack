@@ -57,6 +57,11 @@ docs/
   FEED.md       The live-feed endpoint: full solved request recipe, and the
                 one remaining wall (clean-IP egress, below).
   README.md     Original stack notes: how the chat reader works, wire formats.
+  EXPERIMENTS-2026-10-23.md
+                First experiment batch: egress fully characterized; WARP /
+                VPN Gate blocked by policy, Tor transport works but TikTok
+                still gates the feed; signer module reuse proven byte-for-byte;
+                glue scripts verified from a fresh checkout.
 startup.sh      Restores the runtime stack after a reboot (SNI forwarder,
                 Lightpanda, sanity checks).
 ```
