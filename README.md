@@ -42,6 +42,11 @@ tools/
   ws_fuzzer.py      Drives the Zig client's --fuzz-ws mode over candidate
                     websocket payload types.
   feed_probe3.py    Working probe for the live FEED endpoint (see docs/FEED.md).
+  feed.py           THE reusable feed function: feed(channel_id, transport)
+                    with the whole recipe inside and the egress injected as
+                    any requests.Session. Prefer this over the probes.
+                    Tests: docs/FEED-MODULE-TESTS.md.
+  xgorgon.py        Vendored copy of the Python signer, used by feed.py.
   feed_fetch.py     Fetches and inspects a full feed response.
   capture_feed2.py  CDP capture of the real web client's feed XHR (full URL +
                     response body) — how the feed request was reverse-engineered.
@@ -62,6 +67,9 @@ docs/
                 VPN Gate blocked by policy, Tor transport works but TikTok
                 still gates the feed; signer module reuse proven byte-for-byte;
                 glue scripts verified from a fresh checkout.
+  FEED-MODULE-TESTS.md
+                Test log for tools/feed.py: behavior parity on the default
+                egress and over Tor, plus an import-from-anywhere test.
 startup.sh      Restores the runtime stack after a reboot (SNI forwarder,
                 Lightpanda, sanity checks).
 ```
